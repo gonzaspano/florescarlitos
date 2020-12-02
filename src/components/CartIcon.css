@@ -1,0 +1,17 @@
+.icon-cart {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.number-cart {
+    background-color: red; 
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 10px; 
+    margin-top: 10px;
+    margin-right: 5px;
+
+}
+.text-number-cart {
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+.product-detail-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.img-product-detail {
+    height: 400px;
+}
+.detail-product-container {
+    text-align: center;
+    margin-top: 50px;
+}
+.description-container {
+    margin: 50px 0px 50px 0px
+}
+.buyButton-Container {
+    margin-top: 50px;
+}
