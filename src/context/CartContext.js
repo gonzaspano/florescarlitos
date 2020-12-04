@@ -5,21 +5,40 @@ export const useCartContext = () => useContext(CartContext)
 
 export function CartContextProvider({children}) {
     const [products, setProducts] = useState([])
-    const [productQuantity, setProductQuantity] = useState(0)
+    const [productQuantity, setProductQuantity] = useState(1)
+    const [totalQuantity, setTotalQuantity] = useState(0)
 
-    function addProduct() {
-        if ( productQuantity <= 10)
+    function addProductQuantity(max) {
+        if ( productQuantity < max)
         setProductQuantity(productQuantity + 1)
-        console.log(productQuantity)
     }
-    function removeProduct() {
-        if ( productQuantity >= 1) {
+    function removeProductQuantity() {
+        if ( productQuantity > 1) {
             setProductQuantity(productQuantity -1)
         }
     }
+    function addToCart(newProd, productQuantity){
+        const compareIds = (prod) => prod.id === newProd.id
+        const prodIndex = products.findIndex(compareIds)
+        if (prodIndex === -1) {
+            newProd.quantity = productQuantity
+            const prodAdded = [...products, newProd]
+            setProducts(prodAdded)
+            addTotalQuantity()
+        } else {
+            products[prodIndex].quantity += productQuantity
+            addTotalQuantity()
+        }
+        console.log(products)
+    }
+
+    function addTotalQuantity() {
+        const number = totalQuantity + productQuantity
+        setTotalQuantity(number)
+    }
 
     return <>
-        <CartContext.Provider value= {{addProduct, removeProduct, productQuantity, setProducts, products }}>
+        <CartContext.Provider value= {{addProductQuantity, removeProductQuantity, productQuantity, addToCart, products, totalQuantity }}>
             {children}
         </CartContext.Provider>
     </>

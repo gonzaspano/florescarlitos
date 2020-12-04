@@ -10,7 +10,7 @@ export default function ProductCard(props) {
 
             <Card className="text-center product-card img-style ">
                 <Card.Header as="h5"> {props.name} </Card.Header>
-                <Card.Img variant="top" src={props.imageUrl} className="" />
+                <Card.Link href={`/product/${props.id}`}><Card.Img variant="top" src={props.imageUrl} /></Card.Link>
                 <Card.Body>
                     <Card.Title></Card.Title>
                     <Card.Text>

@@ -12,9 +12,8 @@ export default function ProductDetailContainer() {
     useEffect(() => {
         const product = places.filter(p => p.id === id)
         setProd(...product)
-
     }, [id])
-    console.log(prod)
+
     return <>
         <Container fluid className="product-detail-container">
             <Row noGutters>
