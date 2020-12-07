@@ -1,0 +1,13 @@
+.signup-form {
+    margin-top: 50px;
+    width: 600px;
+}
+.form-button {
+    display: flex;
+    justify-content: center;
+}
+.form-link {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,9 @@
+.signup-form {
+    margin-top: 50px;
+    width: 600px;
+}
+.form-button {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}

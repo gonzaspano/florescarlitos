@@ -2,8 +2,8 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { Container, Row } from 'react-bootstrap'
+import './LogIn.css'
 import { Link } from 'react-router-dom'
-import './SignUp.css'
 
 const style = {
     marginTop: "50px"
@@ -13,7 +13,7 @@ export default function SignUp() {
     return <>
         <Container fluid style={style}>
             <Row className="justify-content-center">
-                <h3>¡Registrate!</h3>
+                <h3>Iniciar sesión</h3>
             </Row>
             <Row className="justify-content-center">
 
@@ -40,12 +40,12 @@ export default function SignUp() {
                         <Form.Control type="password" placeholder="Password" size="lg" />
                     </Form.Group>
                     <div className="form-button">
-                        <Button variant="success" type="submit">
+                        <Button variant="success" type="submit" >
                             Submit
                         </Button>
                     </div>
                     <div className="form-link">
-                        <Link to="/login">¿Ya estás registrade? Inicia sesión</Link>
+                        <Link to="/signup">¿Todavía no estás registrade?</Link>
                     </div>
                 </Form>
             </Row>

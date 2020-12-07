@@ -1,0 +1,7 @@
+.cart-container {
+    width: 350px;
+}
+.list-group-item {
+    display: flex !important;
+    justify-content: space-between;
+}
