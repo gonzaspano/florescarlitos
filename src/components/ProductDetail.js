@@ -5,8 +5,11 @@ import { Button, Col } from 'react-bootstrap'
 import { useCartContext } from '../context/CartContext'
 
 export default function ProductDetail(props) {
-    const {addToCart, productQuantity} = useCartContext()
+    const {addToCart, productQuantity, products} = useCartContext()
 
+    useEffect(() => {
+        console.log(products)
+    }, [products])
 
     return <>
         <div className="product-detail-container">

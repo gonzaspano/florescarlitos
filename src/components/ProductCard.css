@@ -2,10 +2,18 @@
     margin-right: 15px;
     margin-left: 15px;
     margin-bottom: 15px;
+
 }
 .img-style {
-    width: 380px
+    width: 270px;
+    height: auto;
 }
 .product-button {
     margin: 0px 10px 0px 10px
+}
+.buttons-container {
+    display: flex;
+}
+.svg-button {
+    margin-left: 5px;
 }

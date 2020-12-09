@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap'
 import ProductCard from '../components/ProductCard'
 import { useSearchContext } from '../context/SearchContext'
 import products from '../models/Places'
-import CartWidgetContainer from './CartWidgetContainer'
+
 
 const style = {
     marginTop: "50px",
@@ -19,7 +19,7 @@ export default function ProductCardContainer() {
     return <>
         <Container fluid style={style}>
 
-            <Row className="justify-content-between" style={style}>
+            <Row className="justify-content-around" style={style}>
                 {products
                 .filter(p => {return p.name.toLowerCase().indexOf(searchInput) >= 0 })
                 .map((p) =>

@@ -17,6 +17,7 @@ export function CartContextProvider({children}) {
             setProductQuantity(productQuantity -1)
         }
     }
+    
     function addToCart(newProd, productQuantity){
         const compareIds = (prod) => prod.id === newProd.id
         const prodIndex = products.findIndex(compareIds)
@@ -37,8 +38,12 @@ export function CartContextProvider({children}) {
         setTotalQuantity(number)
     }
 
+    function totalPrice() {
+        return products.reduce((prev, next) => (prev + (next.quantity * next.price)))
+    }
+
     return <>
-        <CartContext.Provider value= {{addProductQuantity, removeProductQuantity, productQuantity, addToCart, products, totalQuantity }}>
+        <CartContext.Provider value= {{ totalPrice, addProductQuantity, removeProductQuantity, productQuantity, addToCart, products, totalQuantity }}>
             {children}
         </CartContext.Provider>
     </>

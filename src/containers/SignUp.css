@@ -1,9 +1,15 @@
 .signup-form {
-    margin-top: 50px;
+    margin-top: 30px;
     width: 600px;
 }
 .form-button {
-    margin-bottom: 50px;
     display: flex;
     justify-content: center;
+}
+.container-form-login {
+    display: flex;
+    justify-content: center;
+}
+.input-form-login{
+    width: 300px !important
 }
