@@ -1,14 +1,25 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { useCartContext } from '../context/CartContext'
+import { Col, Row, Container } from 'react-bootstrap';
 
 export default function Cart() {
-    const {addToCart, productQuantity, products, totalPrice, totalQuantity} = useCartContext()
-
-    useEffect(() => {
-        console.log(products)
-    }, [products])    
-
+    const { cartList, productQuantity } = useCartContext()
+    console.log(cartList)
     return <>
-        <div> total: {totalQuantity} </div>
+        <Container>
+            <Row>
+                {cartList.map((p, i) =>
+                    <div key={i} className="prod-container">
+                        <Col xs={12} md={10}>
+                            <p>{p.name} x {p.quantity}</p>
+                        </Col>
+                        <Col xs={6} md={2}>
+                            <p>${p.price * p.quantity}</p>
+                        </Col>
+                    </div>
+                )}
+                <p>cart: {productQuantity}</p>
+            </Row>
+        </Container>
     </>
 }

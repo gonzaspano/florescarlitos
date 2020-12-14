@@ -2,16 +2,15 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import './ProductCard.css'
-import { useCartContext } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 export default function ProductCard(props) {
-    const { addToCart } = useCartContext()
 
     return <>
 
         <Card className="text-center product-card img-style ">
             <Card.Header as="h5" className="header"> {props.name} </Card.Header>
-            <Card.Link href={`/product/${props.id}`}><Card.Img variant="top" src={props.imageUrl} /></Card.Link>
+            <Link to={`/product/${props.id}`}><Card.Img variant="top" src={props.imageUrl} /></Link>
             <Card.Body>
                 <Card.Title> $ {props.price}</Card.Title>
 

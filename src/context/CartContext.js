@@ -1,49 +1,45 @@
-import React, {useContext, useState} from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 
 export const CartContext = React.createContext()
 export const useCartContext = () => useContext(CartContext)
 
-export function CartContextProvider({children}) {
-    const [products, setProducts] = useState([])
+export function CartContextProvider({ children }) {
+    const [cartList, setCartList] = useState([])
     const [productQuantity, setProductQuantity] = useState(1)
-    const [totalQuantity, setTotalQuantity] = useState(0)
 
-    function addProductQuantity(max) {
-        if ( productQuantity < max)
-        setProductQuantity(productQuantity + 1)
+    function addProductQuantity(stock) {
+        if (productQuantity < stock) {
+            const number = productQuantity + 1
+            setProductQuantity(number)
+        }
     }
     function removeProductQuantity() {
-        if ( productQuantity > 1) {
-            setProductQuantity(productQuantity -1)
+        if (productQuantity > 1) {
+            const number = productQuantity -1
+            setProductQuantity(number)
         }
     }
-    
-    function addToCart(newProd, productQuantity){
-        const compareIds = (prod) => prod.id === newProd.id
-        const prodIndex = products.findIndex(compareIds)
-        if (prodIndex === -1) {
-            newProd.quantity = productQuantity
-            const prodAdded = [...products, newProd]
-            setProducts(prodAdded)
-            addTotalQuantity()
-        } else {
-            products[prodIndex].quantity += productQuantity
-            addTotalQuantity()
+    function addProductToCart(newProd, quantity) {
+        const compareId = (p) => newProd.id === p.id
+        const indexId = cartList.findIndex(compareId)
+        if (indexId == -1) {
+            const prod = newProd
+            prod.quantity = quantity
+            const prodList = [...cartList, prod]
+            setCartList(prodList)
         }
-        console.log(products)
+        else {
+            cartList[indexId].quantity = cartList[indexId].quantity + quantity
+        }
     }
 
-    function addTotalQuantity() {
-        const number = totalQuantity + productQuantity
-        setTotalQuantity(number)
-    }
-
-    function totalPrice() {
-        return products.reduce((prev, next) => (prev + (next.quantity * next.price)))
-    }
+    useEffect(() => {
+        console.log(cartList)
+    }, [cartList])
 
     return <>
-        <CartContext.Provider value= {{ totalPrice, addProductQuantity, removeProductQuantity, productQuantity, addToCart, products, totalQuantity }}>
+        <CartContext.Provider 
+            value={{ productQuantity, addProductQuantity, removeProductQuantity, addProductToCart, cartList, setCartList }}>
             {children}
         </CartContext.Provider>
     </>
