@@ -1,7 +1,13 @@
-.empty-cart-container {
+.row-container {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    margin-top: 100px;
+}
+.cart-container {
+    display: flex;
+}
+.title-cart-container {
+    text-align: center;
 }

@@ -5,20 +5,8 @@ export const useCartContext = () => useContext(CartContext)
 
 export function CartContextProvider({ children }) {
     const [cartList, setCartList] = useState([])
-    const [productQuantity, setProductQuantity] = useState(1)
 
-    function addProductQuantity(stock) {
-        if (productQuantity < stock) {
-            const number = productQuantity + 1
-            setProductQuantity(number)
-        }
-    }
-    function removeProductQuantity() {
-        if (productQuantity > 1) {
-            const number = productQuantity -1
-            setProductQuantity(number)
-        }
-    }
+
     function addProductToCart(newProd, quantity) {
         const compareId = (p) => newProd.id === p.id
         const indexId = cartList.findIndex(compareId)
@@ -33,13 +21,31 @@ export function CartContextProvider({ children }) {
         }
     }
 
+    function deleteProduct(prod) {
+        const compareId = (p) => prod.id === p.id
+        const indexId = cartList.findIndex(compareId)
+        if (indexId !== -1 && cartList[indexId].quantity === 1) {
+            cartList.splice(indexId, 1)
+        } else if(indexId !== -1 && cartList[indexId].quantity > 1) {
+            cartList[indexId].quantity = cartList[indexId].quantity -1
+        }
+    }
+
+    function cleanList() {
+        setCartList([])
+    }
+
+    function totalPrice() {
+        return cartList.reduce((prev, next) => (prev + (next.price * next.quantity)),0)        
+    }
+
     useEffect(() => {
         console.log(cartList)
     }, [cartList])
 
     return <>
         <CartContext.Provider 
-            value={{ productQuantity, addProductQuantity, removeProductQuantity, addProductToCart, cartList, setCartList }}>
+            value={{ addProductToCart, cartList, setCartList, totalPrice, cleanList }}>
             {children}
         </CartContext.Provider>
     </>

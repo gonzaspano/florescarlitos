@@ -8,7 +8,7 @@ import './CartWidgetContainer.css'
 
 export default function CartWidgetContainer(props) {
     const [full, setFull] = useState(true)
-    const { cartList } = useCartContext()
+    const { cartList, totalPrice } = useCartContext()
 
     useEffect(() => {
         if(cartList.length === 0) {
@@ -42,7 +42,7 @@ export default function CartWidgetContainer(props) {
                             <p>Total:</p>
                         </Col>
                         <Col xs={6} md={2}>
-                            <p>$3000</p>
+                            <p>$ {totalPrice()}</p>
                         </Col>
                     </Row>
                 </Container>

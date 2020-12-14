@@ -1,9 +1,7 @@
 import React from 'react'
-import { useCartContext } from '../context/CartContext'
 import './Counter.css'
 
-export default function Counter({stock}) {
-    const { addProductQuantity, removeProductQuantity, productQuantity } = useCartContext()
+export default function Counter({stock, counter, removeProductQuantity, addProductQuantity }) {
 
     return <>
         <div className="counter-container">
@@ -14,7 +12,7 @@ export default function Counter({stock}) {
                 </svg>
             </div>
             <div>
-                <p> {productQuantity} </p>
+                <p> {counter} </p>
             </div>
             <div className="counter-icon-container">
                 <svg onClick={() => addProductQuantity(stock)} width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
