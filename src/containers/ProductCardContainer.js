@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import ProductCard from '../components/ProductCard'
 import { useProductsContext } from '../context/ProductsContext'
 import { useSearchContext } from '../context/SearchContext'
-
-const style = {
-    marginTop: "50px",
-}
+import './ProductCardContainer.css'
 
 export default function ProductCardContainer() {
     const { searchInput } = useSearchContext()
@@ -17,9 +14,12 @@ export default function ProductCardContainer() {
     },[searchInput, prods]) 
 
     return <>
-        <Container fluid style={style}>
+        <Container fluid className="productcardcontainer-container">
 
-            <Row className="justify-content-around" style={style}>
+            <Row className="justify-content-around productcardcontainer-row">
+                <Col sm={12} md={12} lg={12} xl={12}>
+                    <h3 className="product-title-cardcontainer">Nuestros productos</h3>
+                </Col>
                 {prods
                 .filter(p => {return p.name.toLowerCase().indexOf(searchInput) >= 0 })
                 .map((p) =>

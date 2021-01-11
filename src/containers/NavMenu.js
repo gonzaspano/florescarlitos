@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from 'react-bootstrap/Navbar'
 import './Navbar.css'
 import CartIcon from '../components/CartIcon';
 import SignUpIcon from '../components/SignUpIcon';
@@ -15,10 +14,9 @@ export default function NavMenu() {
       <Container fluid>
         <div bg="light" variant="dark" className="navbar-container" >
           <div className="categories-container">
-            <Link to="/" className="text"> <p className="text"> Home </p></Link>
-            <Link to="/regalos" className="text"> <p className="text"> Regalos </p></Link>
-            <Link to="/condolencias" className="text"> <p className="text"> Condolencias </p></Link>
-            <Link to="/eventos" className="text"> <p className="text"> Eventos </p></Link>
+            <Link to="/category/regalos" className="text"> <p className="text"> Regalos </p></Link>
+            <Link to="/category/condolencias" className="text"> <p className="text"> Condolencias </p></Link>
+            <Link to="/category/eventos" className="text"> <p className="text"> Eventos </p></Link>
           </div>
           <div className="title-container">
             <Link to="/">  <h1 className="text"> Florería Carlitos</h1></Link>

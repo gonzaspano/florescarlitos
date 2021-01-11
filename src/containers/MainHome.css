@@ -1,0 +1,12 @@
+.mainhome-title-container {
+    display:flex;
+    justify-content: center;
+    margin: 30px 0px 0px 0px
+}
+.mainhome-text-container {
+    display:flex;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+    font-size: 25px;
+}

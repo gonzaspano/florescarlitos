@@ -51,7 +51,6 @@ function ModalLogIn(props) {
 export default function SignUp() {
     const [modalShow, setModalShow] = useState(false);
 
-
     return <>
         <Container fluid style={style}>
             <Row className="justify-content-center">

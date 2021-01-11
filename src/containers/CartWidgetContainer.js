@@ -48,7 +48,7 @@ export default function CartWidgetContainer(props) {
                 </Container>
             </Modal.Body>
             <Modal.Footer>
-                <Link to="/cart"><Button variant="dark">Finalizar compra</Button> </Link>
+                <Link to="/cart"><Button onClick={props.onHide} variant="dark">Finalizar compra</Button> </Link>
                 <Button variant="dark" onClick={() => cleanList()}>Limpiar</Button>
                 <Button variant="dark" onClick={props.onHide}>Cerrar</Button>
             </Modal.Footer>

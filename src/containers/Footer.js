@@ -1,4 +1,5 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
+import '../containers/Footer.css'
 
 export default function Footer() {
     const yearnow = new Date()
@@ -6,9 +7,9 @@ export default function Footer() {
 
     return <>
         <Container fluid>
-            <Row>
+            <div class="footer-container">
                 <p>Copyright © {year} SpanoG  </p>
-            </Row>
+            </div>
         </Container>
     </>
 }

@@ -8,10 +8,6 @@ export const useProductsContext = () => useContext(ProductsContext)
 export function ProductsContextProvider({ children }) {
     const [prods, setProds] = useState([])
 
-//  HAY Q FILTRAR POR CATEGORY 
-/*     const { category }= useParams()
-    console.log(category) */
-
     useEffect(() => {
         fetch('http://localhost:5000/api/products/all')
         .then(response => response.json())

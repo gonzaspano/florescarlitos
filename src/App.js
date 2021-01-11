@@ -31,7 +31,7 @@ function App() {
                 <ProductDetailContainer />
               </Route>
 
-              <Route path="/:category">
+              <Route path="/category/:category">
                 <Home />
               </Route>
 
