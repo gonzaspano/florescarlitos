@@ -8,7 +8,6 @@ export function SearchContextProvider( {children} ) {
 
     function getInputValue(e) {
         setSearchInput(e.target.value)
-        console.log(searchInput)
     }
 
     return <>

@@ -3,14 +3,15 @@ import { Container, Row } from 'react-bootstrap'
 import ProductDetail from '../components/ProductDetail'
 import './ProductDetailContainer.css'
 import { useParams } from 'react-router-dom'
-import places from '../models/Places'
+import { useProductsContext } from '../context/ProductsContext'
 
 export default function ProductDetailContainer() {
     const [prod, setProd] = useState([])
     const { id } = useParams()
+    const { prods } = useProductsContext()
 
     useEffect(() => {
-        const product = places.filter(p => p.id === id)
+        const product = prods.filter(p => p.id === id)
         setProd(...product)
     }, [id])
 

@@ -11,3 +11,9 @@
 .title-cart-container {
     text-align: center;
 }
+.cart-option-button {
+    font-size: 14px;
+    margin: 0px;
+    cursor: pointer;
+    color: blue;
+}

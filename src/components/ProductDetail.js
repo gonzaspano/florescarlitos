@@ -5,6 +5,7 @@ import { Col } from 'react-bootstrap'
 import ButtonAddToCart from './ButtonAddToCart'
 import { useState } from 'react'
 
+
 export default function ProductDetail(props) {
     const [ counter, setCounter ] = useState(1)
 

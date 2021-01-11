@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import ProductCard from '../components/ProductCard'
+import { useProductsContext } from '../context/ProductsContext'
 import { useSearchContext } from '../context/SearchContext'
-import products from '../models/Places'
-
 
 const style = {
     marginTop: "50px",
@@ -11,16 +10,17 @@ const style = {
 
 export default function ProductCardContainer() {
     const { searchInput } = useSearchContext()
+    const {prods} = useProductsContext()
 
     useEffect(() => {
 
-    },[searchInput]) 
+    },[searchInput, prods]) 
 
     return <>
         <Container fluid style={style}>
 
             <Row className="justify-content-around" style={style}>
-                {products
+                {prods
                 .filter(p => {return p.name.toLowerCase().indexOf(searchInput) >= 0 })
                 .map((p) =>
                     <ProductCard

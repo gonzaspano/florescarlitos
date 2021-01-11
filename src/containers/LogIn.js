@@ -73,6 +73,7 @@ export default function SignUp() {
             <Row className="justify-content-center">
                 <h3>Iniciar sesión</h3>
             </Row>
+
             <Row className="justify-content-center">
                 <Form className="signup-form">
                     <div className="form-link">
@@ -93,6 +94,7 @@ export default function SignUp() {
                         </Button>
                     </div>
                 </Form>
+                
                 <ModalSignUp
                     show={modalShow}
                     onHide={() => setModalShow(false)}

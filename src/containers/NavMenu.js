@@ -16,9 +16,9 @@ export default function NavMenu() {
         <div bg="light" variant="dark" className="navbar-container" >
           <div className="categories-container">
             <Link to="/" className="text"> <p className="text"> Home </p></Link>
-            <Link to="/places" className="text"> <p className="text"> Places </p></Link>
-            <Link to="/addplaces" className="text"> <p className="text"> New place </p></Link>
-            <Link to="/cart" className="text"> <p className="text"> Cart </p></Link>
+            <Link to="/regalos" className="text"> <p className="text"> Regalos </p></Link>
+            <Link to="/condolencias" className="text"> <p className="text"> Condolencias </p></Link>
+            <Link to="/eventos" className="text"> <p className="text"> Eventos </p></Link>
           </div>
           <div className="title-container">
             <Link to="/">  <h1 className="text"> Florería Carlitos</h1></Link>

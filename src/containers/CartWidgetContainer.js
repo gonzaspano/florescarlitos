@@ -8,7 +8,7 @@ import './CartWidgetContainer.css'
 
 export default function CartWidgetContainer(props) {
     const [full, setFull] = useState(true)
-    const { cartList, totalPrice } = useCartContext()
+    const { cartList, totalPrice, cleanList } = useCartContext()
 
     useEffect(() => {
         if(cartList.length === 0) {
@@ -49,6 +49,7 @@ export default function CartWidgetContainer(props) {
             </Modal.Body>
             <Modal.Footer>
                 <Link to="/cart"><Button variant="dark">Finalizar compra</Button> </Link>
+                <Button variant="dark" onClick={() => cleanList()}>Limpiar</Button>
                 <Button variant="dark" onClick={props.onHide}>Cerrar</Button>
             </Modal.Footer>
         </Modal>

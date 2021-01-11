@@ -90,7 +90,7 @@ export default function SignUp() {
                     </Form.Group>
                     <div className="form-button">
                         <Button variant="success" type="submit">
-                            Submit
+                            Crear cuenta
                         </Button>
                     </div>
                 </Form>

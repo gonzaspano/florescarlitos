@@ -6,51 +6,58 @@ import NavMenu from './containers/NavMenu'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import SignUp from './containers/SignUp'
 import LogIn from './containers/LogIn'
-import PlacesList from './containers/PlacesList'
-import AddPlace from './containers/AddPlace'
-import UsersList from './containers/UsersList'
 import ProductDetailContainer from './containers/ProductDetailContainer'
 import Cart from './containers/Cart'
+import CheckOut from '../src/containers/CheckOut'
+import { ProductsContextProvider } from './context/ProductsContext'
+import Footer from './containers/Footer'
 
 function App() {
 
   return <>
-    <CartContextProvider>
+    <BrowserRouter>
 
-      <BrowserRouter>
-        <SearchContextProvider>
-          <NavMenu />
-          <Switch>
+      <CartContextProvider>
+        <ProductsContextProvider>
+          <SearchContextProvider>
 
-            <Route exact path="/">
-              <Home />
-            </Route>
+            <NavMenu />
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
 
-            <Route path="/product/:id">
-              <ProductDetailContainer />
-            </Route>
+              <Route path="/product/:id">
+                <ProductDetailContainer />
+              </Route>
 
-            <Route path="/cart">
-              <Cart />
-            </Route>
+              <Route path="/:category">
+                <Home />
+              </Route>
 
-            <Route path="/signup">
-              <SignUp />
-            </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
 
-            <Route path="/login">
-              <LogIn />
-            </Route>
+              <Route path="/signup">
+                <SignUp />
+              </Route>
 
-            <Route path="/places">
-              <PlacesList />
-            </Route>
+              <Route path="/login">
+                <LogIn />
+              </Route>
 
-          </Switch>
-        </SearchContextProvider>
-      </BrowserRouter>
-    </CartContextProvider>
+              <Route path="/checkout">
+                <CheckOut />
+              </Route>
+            </Switch>
+            <Footer />
 
+          </SearchContextProvider>
+        </ProductsContextProvider>
+      </CartContextProvider>
+
+    </BrowserRouter>
   </>
 }
 
