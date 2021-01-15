@@ -5,6 +5,7 @@ import MainHome from './MainHome'
 import MainContact from '../components/MainContact'
 
 function Home() {
+
     return <>
         <SearchNavbar/> 
         <MainHome/>

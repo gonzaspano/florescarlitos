@@ -12,6 +12,7 @@ import CheckOut from '../src/containers/CheckOut'
 import { ProductsContextProvider } from './context/ProductsContext'
 import Footer from './containers/Footer'
 import AddProducts from './containers/AddProducts'
+import Categories from './containers/Categories'
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
               </Route>
 
               <Route path="/categories/:category">
-                <Home />
+                <Categories />
               </Route>
 
               <Route path="/product/:id">

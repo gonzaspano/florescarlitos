@@ -15,9 +15,9 @@ export default function NavMenu() {
         <div bg="light" variant="dark" className="navbar-container" >
           <div className="categories-container">
             <NavDropdown className="text text-dropdown" title="Categorías" id="nav-dropdown">
-              <NavDropdown.Item className="text-dropdown" eventKey="4.1"><Link to="/category/regalos"> Regalos </Link></NavDropdown.Item>
-              <NavDropdown.Item className="text-dropdown" eventKey="4.2"><Link to="/category/condolencias">Condolencias</Link></NavDropdown.Item>
-              <NavDropdown.Item className="text-dropdown" eventKey="4.3"><Link to="/category/eventos"> Eventos</Link></NavDropdown.Item>
+              <NavDropdown.Item className="text-dropdown" eventKey="4.1"><Link to="/categories/regalos"> Regalos </Link></NavDropdown.Item>
+              <NavDropdown.Item className="text-dropdown" eventKey="4.2"><Link to="/categories/condolencias">Condolencias</Link></NavDropdown.Item>
+              <NavDropdown.Item className="text-dropdown" eventKey="4.3"><Link to="/categories/eventos"> Eventos</Link></NavDropdown.Item>
             </NavDropdown>
             <Link to="/addproducts" className="text"> <p className="text"> Nuevo producto </p></Link>
           </div>

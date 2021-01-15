@@ -25,11 +25,7 @@ export default function ProductCardContainer() {
                 .map((p) =>
                     <ProductCard
                         key={p.id}
-                        id= {p.id}
-                        name={p.name}
-                        description={p.description}
-                        price={p.price}
-                        imageUrl={p.imageUrl} />
+                        prod={p} />
                 )}
             </Row>
         </Container>
