@@ -5,7 +5,7 @@ import './MainHome.css'
 export default function MainHome() {
 
     return <>
-        <Container fluid>
+        <Container fluid >
             <Row className="mainhome-title-container">
                 <Col sm={4} md={4} lg={4} xl={4}>
                     <h3>Arreglos florales a tu medida</h3>

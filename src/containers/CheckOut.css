@@ -1,9 +1,28 @@
-.input-checkout-container {
-    margin: 0px 50px 0px 0px
+.checkout-form-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.233);
+} 
+.checkout-buttoncontainer {
+    text-align: center;
+    margin: 30px
 }
-.input-checkout {
-    width: 300px;
+.checkout-form-subcontainer{
+    margin: 30px 30px 0px 30px
 }
-.select-checkout {
-    width: 100px;
+.checkout-title-guest{
+    text-align: center;
+    margin-top: 20px;
+}
+.button-login-checkout{
+    margin-left: 10px;
+}
+.paymentway-form-user{
+    width: 200px !important;
+}
+.checkout-paymentway-container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
 }
