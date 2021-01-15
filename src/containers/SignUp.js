@@ -4,10 +4,8 @@ import Button from 'react-bootstrap/Button'
 import { Container, Modal, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './SignUp.css'
+import SignUpForm from '../components/SignUpForm'
 
-const style = {
-    marginTop: "50px"
-}
 
 function ModalLogIn(props) {
     return (
@@ -51,48 +49,25 @@ function ModalLogIn(props) {
 export default function SignUp() {
     const [modalShow, setModalShow] = useState(false);
 
+    function showModal() {
+        setModalShow(true)
+    }
+
     return <>
-        <Container fluid style={style}>
+        <Container fluid className="signup-container" >
             <Row className="justify-content-center">
                 <h3>¡Registrate!</h3>
             </Row>
             <Row className="justify-content-center">
+            <div className="form-link">
+                <Link to="#" onClick={() => showModal()}>¿Ya estás registrade? Inicia sesión</Link>
+            </div>
+            </Row>
+            <Row className="justify-content-center">
 
-                <Form className="signup-form">
-                    <div className="form-link">
-                        <Link to="#" onClick={() => setModalShow(true)}>¿Ya estás registrade? Inicia sesión</Link>
-                    </div>
-                    <Form.Group controlId="formBasicName">
-                        <Form.Label>Nombre</Form.Label>
-                        <Form.Control type="text" placeholder="Nombre" size="lg" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicSurname">
-                        <Form.Label>Apellido</Form.Label>
-                        <Form.Control type="text" placeholder="Apellido" size="lg" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="nombre@ejemplo.com" size="lg" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Repetir email</Form.Label>
-                        <Form.Control type="email" placeholder="nombre@ejemplo.com" size="lg" />
-                    </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="password" placeholder="Password" size="lg" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Repetir contraseña</Form.Label>
-                        <Form.Control type="password" placeholder="Password" size="lg" />
-                    </Form.Group>
-                    <div className="form-button">
-                        <Button variant="success" type="submit">
-                            Crear cuenta
-                        </Button>
-                    </div>
-                </Form>
+                <SignUpForm showModal={showModal}/>
+
                 <ModalLogIn
                     show={modalShow}
                     onHide={() => setModalShow(false)}

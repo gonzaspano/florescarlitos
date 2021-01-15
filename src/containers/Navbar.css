@@ -4,6 +4,9 @@
     grid-template-areas: "categories title icons";
     align-items: center;
 }
+.text-dropdown a {
+    color: black;
+}
 .text {
     color: black;
     margin-top: 10px;

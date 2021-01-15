@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Navbar, NavbarBrand } from 'react-bootstrap'
+import { NavbarBrand } from 'react-bootstrap'
 
 export default function SignUpIcon() {
     return <>

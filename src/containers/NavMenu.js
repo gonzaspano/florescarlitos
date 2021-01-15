@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css'
 import CartIcon from '../components/CartIcon';
 import SignUpIcon from '../components/SignUpIcon';
-import { Container } from 'react-bootstrap';
+import { Container, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidgetContainer from './CartWidgetContainer';
 
@@ -14,9 +14,12 @@ export default function NavMenu() {
       <Container fluid>
         <div bg="light" variant="dark" className="navbar-container" >
           <div className="categories-container">
-            <Link to="/category/regalos" className="text"> <p className="text"> Regalos </p></Link>
-            <Link to="/category/condolencias" className="text"> <p className="text"> Condolencias </p></Link>
-            <Link to="/category/eventos" className="text"> <p className="text"> Eventos </p></Link>
+            <NavDropdown className="text text-dropdown" title="Categorías" id="nav-dropdown">
+              <NavDropdown.Item className="text-dropdown" eventKey="4.1"><Link to="/category/regalos"> Regalos </Link></NavDropdown.Item>
+              <NavDropdown.Item className="text-dropdown" eventKey="4.2"><Link to="/category/condolencias">Condolencias</Link></NavDropdown.Item>
+              <NavDropdown.Item className="text-dropdown" eventKey="4.3"><Link to="/category/eventos"> Eventos</Link></NavDropdown.Item>
+            </NavDropdown>
+            <Link to="/addproducts" className="text"> <p className="text"> Nuevo producto </p></Link>
           </div>
           <div className="title-container">
             <Link to="/">  <h1 className="text"> Florería Carlitos</h1></Link>

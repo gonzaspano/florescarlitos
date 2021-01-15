@@ -11,6 +11,7 @@ import Cart from './containers/Cart'
 import CheckOut from '../src/containers/CheckOut'
 import { ProductsContextProvider } from './context/ProductsContext'
 import Footer from './containers/Footer'
+import AddProducts from './containers/AddProducts'
 
 function App() {
 
@@ -27,14 +28,18 @@ function App() {
                 <Home />
               </Route>
 
+              <Route path="/categories/:category">
+                <Home />
+              </Route>
+
               <Route path="/product/:id">
                 <ProductDetailContainer />
               </Route>
 
-              <Route path="/category/:category">
-                <Home />
-              </Route>
-
+              <Route path="/addproducts">
+                <AddProducts />
+              </Route> 
+              
               <Route path="/cart">
                 <Cart />
               </Route>

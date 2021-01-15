@@ -6,7 +6,7 @@ const style = {
     marginTop: "50px"
 }
 
-export default function AddPlace() {
+export default function AddProducts() {
     return <>
         <Container fluid style={style}>
             <Row className="justify-content-center">

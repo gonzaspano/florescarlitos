@@ -1,0 +1,12 @@
+.signup-formcontainer {
+    margin-top: 25px;
+    display: flex;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.233);
+} 
+.signup-buttoncontainer {
+    text-align: center;
+    margin: 30px
+}
+.signup-subcontainer{
+    margin: 30px 30px 0px 30px
+}
