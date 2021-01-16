@@ -13,6 +13,7 @@ import { ProductsContextProvider } from './context/ProductsContext'
 import Footer from './containers/Footer'
 import AddProducts from './containers/AddProducts'
 import Categories from './containers/Categories'
+import './App.css'
 
 function App() {
 

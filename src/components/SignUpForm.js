@@ -27,7 +27,7 @@ export default function SignUpForm() {
 
                 <div className="signup-subcontainer">
 
-                    <Form.Group controlId="formBasicEmail">
+                    <Form.Group controlId="repeatFormBasicEmail">
                         <Form.Label>Repetir email</Form.Label>
                         <Form.Control type="email" placeholder="nombre@ejemplo.com" size="sm" />
                     </Form.Group>
@@ -36,7 +36,7 @@ export default function SignUpForm() {
                         <Form.Label>Contraseña</Form.Label>
                         <Form.Control type="password" placeholder="Password" size="sm" />
                     </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group controlId="repeatFormBasicPassword">
                         <Form.Label>Repetir contraseña</Form.Label>
                         <Form.Control type="password" placeholder="Password" size="sm" />
                     </Form.Group>

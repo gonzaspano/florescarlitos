@@ -1,7 +1,8 @@
 .mainhome-title-container {
     display:flex;
     justify-content: center;
-    margin: 30px 0px 0px 0px
+    margin: 30px 0px 0px 0px;
+    text-align: center
 }
 .mainhome-text-container {
     display:flex;

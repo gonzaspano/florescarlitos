@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ProductCardContainer from './ProductCardContainer'
 import SearchNavbar from '../components/SearchNavbar'
 import MainHome from './MainHome'

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './CheckOut.css'
 
 function FormCheckOut() {
@@ -85,9 +86,9 @@ function FormCheckOut() {
                     <Button variant="dark" type="submit">
                         Finalizar compra
                     </Button>
-                    <Button className="button-login-checkout" variant="dark" type="button">
+                    <Link to={'/signup'}> <Button className="button-login-checkout" variant="dark" type="button">
                         Crear usuario
-                    </Button>
+                    </Button> </Link>
                 </div>
             </Form>
         </Col>
