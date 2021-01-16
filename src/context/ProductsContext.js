@@ -8,7 +8,7 @@ export function ProductsContextProvider({ children }) {
     const [prods, setProds] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products/all')
+        fetch('https://todomateback.herokuapp.com/api/products/all')
         .then(response => response.json())
         .then(json =>  setProds(json.DUMMY_PRODUCTS))
     }, [])
