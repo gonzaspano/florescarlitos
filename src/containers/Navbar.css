@@ -26,3 +26,6 @@
     grid-area: icons;
     text-align: right;
 }
+.text-link-title:hover {
+    text-decoration: none;
+}
